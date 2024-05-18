@@ -1,0 +1,106 @@
+
+body{
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    margin: 0;
+    padding: 10px;
+}
+.navbar{
+    grid-area: nav;
+}
+.ima{
+    width: 200px; 
+    height: 300px;
+}
+.ima2{
+    width: 50px; 
+    height: 50px;
+}
+li{
+    list-style: none;
+}
+.encabezado{
+    font-size: 50px;
+    grid-area: enc; 
+    padding: 20px;
+}
+.contenido{
+    grid-area: con;
+}
+.pie{
+    background-color: #ffffff;
+    padding: 25px; 
+    grid-area: pie;
+}
+.lateral{
+    grid-area: lat;
+    background-color: #aed6e2;
+    padding: 50px; 
+    border: 1px solid #000;
+}
+.principal{
+    grid-area: pri;
+    font-size: 25px;
+    color:#000000;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, auto));
+    grid-gap: 10px;
+    padding: 20px;
+}
+.contenedor-caja{
+    
+    padding: 5px;
+    text-align: center;
+}
+.contenedor-grid{
+    padding: 30px;
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "enc"
+        "enc"
+        "nav" 
+        "nav" 
+        "nav"
+        "lat"
+        "lat"
+        "pri" 
+        "pri"
+        "pie pie pie"
+    ;
+}
+
+@media(min-width:468px){
+    nav ul{
+        flex-direction: column;
+    }
+    .contenedor-grid{
+        grid-template-columns: 2fr 2fr 2fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "enc enc enc"
+        "nav nav nav"
+        "lat pri pri"
+        "lat pri pri"
+        "pie pie pie"
+        ;
+    }
+}
+@media(min-width:769px){
+    nav ul{
+        flex-direction: column;
+    }
+    .contenedor-grid{
+        grid-template-columns: 2fr 2fr 2fr 2fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "enc enc enc enc"
+        "nav nav nav nav"
+        "lat pri pri pri"
+        "pie pie pie pie"
+        ;
+    }
+}
